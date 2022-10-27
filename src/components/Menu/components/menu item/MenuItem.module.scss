@@ -1,0 +1,45 @@
+.menuItem{
+  margin-top: 2rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  span{
+    font-weight: 600;
+    font-size: 20px;
+    margin-left: 1rem;
+    text-align: left;
+  }
+  .icon{
+    width: 32px;
+    height: 32px;
+  }
+  .arrow{
+    width: 100%;
+    text-align: right;
+  }
+  &:link,&:visited{
+    text-decoration: none;
+    color: var(--text-black-color);
+  }
+  .currentPage{
+    position: absolute;
+    width: 3px;
+    height: 37px;
+    background: #4F27BF;
+    right: 0;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .menuItem{
+    span{
+      font-size: 16px;
+    }
+  }
+}

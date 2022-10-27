@@ -1,0 +1,18 @@
+main {
+  font-family: Montserrat, sans-serif;
+  overflow: auto;
+  .heading{
+    font-weight: 700;
+    font-size: 26px;
+  }
+  .subHeading{
+    margin-top: 1rem;
+    font-weight: 500;
+    font-size: 20px;
+  }
+  p {
+    font-weight: 500;
+    font-size: 20px;
+    margin: 1rem 0;
+  }
+}
