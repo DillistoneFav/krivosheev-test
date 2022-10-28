@@ -18,16 +18,16 @@ const Navbar = () => {
 
     return (
         <header className={styles.navbarCont}>
-            <div className={styles.menuBTN} onClick={handleShowMenu}>
+            <div className={styles.menuBTN} onClick={handleShowMenu} tabIndex={1}>
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <div className={styles.leftPartHeader}>
+            <div className={styles.leftPartHeader} tabIndex={2}>
                 <img src={wrenchIcon} alt={"wrench icon"}/>
                 <span className={styles.companyName}>Wrench CRM</span>
             </div>
-            <div className={styles.rightPartHeader}>
+            <div className={styles.rightPartHeader} tabIndex={3}>
                 <div className={styles.circle}>
                     <img src={user} alt={"user icon"}/>
                 </div>

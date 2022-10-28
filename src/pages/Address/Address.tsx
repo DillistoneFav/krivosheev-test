@@ -37,8 +37,9 @@ const Address = () => {
                     placeholder={"Введите адрес"}
                     onChange={(event) => setInputValue(event.target.value)}
                     onKeyPress={handleEnterPress}
+                    tabIndex={4}
                 />
-                <button className={styles.searchButton} onClick={getAddresses}>
+                <button className={styles.searchButton} onClick={getAddresses} tabIndex={5}>
                     <img src={magnifierWhite} alt={"лупа"}/>
                     <span>Поиск</span>
                 </button>
