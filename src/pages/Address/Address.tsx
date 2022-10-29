@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import styles from './Address.module.scss'
 
 import magnifierWhite from "../../assets/navbar/magnifierWhite.svg"
@@ -13,13 +13,13 @@ const Address = () => {
     const {userAddresses, isLoading, error} = useAppSelector(state => state.addressReducer)
     const dispatch = useAppDispatch()
 
-    const getAddresses = () => {
+    const getAddresses = useCallback(() => {
         if (inputValue.length >= 3) {
             dispatch(fetchAddresses(inputValue))
         } else {
             dispatch(addressSlice.actions.addressFetchingError("Введите не менее 3 символов!"))
         }
-    }
+    },[inputValue])
 
     const handleEnterPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
@@ -50,10 +50,10 @@ const Address = () => {
                 {isLoading ?
                     <Loader/>
                     :
-                    !userAddresses.length ?
-                        <span>Адреса не найдены!</span>
-                        :
+                    userAddresses.length ?
                         userAddresses.map(item => <AddressItem text={item.value} key={item.value}/>)
+                        :
+                        <AddressItem text={"Адреса не найдены!"}/>
                 }
             </section>
         </main>
